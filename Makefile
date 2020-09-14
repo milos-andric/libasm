@@ -1,0 +1,27 @@
+NAME=libasm.a
+ASM= ft_strlen.s 
+#      ft_strcpy.s \
+#     ft_strcmp.s \
+#      ft_write.s \
+#      ft_read.s \
+#      ft_strdup.s
+
+OBJS=$(ASM:%.s=%.o)
+
+%.o: %.s
+	nasm -f elf64 $< -o $@
+
+all : $(NAME)
+
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+re : fclean all
+
+run : main.c $(OBJS)
+	 clang main.c -L.  -lasm -o libasm
