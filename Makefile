@@ -24,7 +24,7 @@ fclean: clean
 re : fclean all
 
 run :	$(NAME) 
-	 	clang  main.c -L.  -lasm -o libasm
+	 	clang  main.c -L. -lasm -o libasm
 
 runs :	$(NAME) 
-	 	clang -g3 -fsanitize=address main.c -L.  -lasm -o libasm
+	 	clang -g3 -fsanitize=address main.c -L. -lasm -o libasm

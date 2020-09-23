@@ -4,6 +4,7 @@
 
 int main(void)
 {
+	setbuf(stdout, NULL);
 	int s1 = ft_strlen("sd");
 	printf("%zu\n", ft_strlen("0123456789"));
 	printf("%zu\n", ft_strlen("01234"));

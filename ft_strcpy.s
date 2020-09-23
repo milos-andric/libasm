@@ -10,20 +10,22 @@
 section .text
 global ft_strcpy
 
+%define src rsi
+%define dest rdi
+
 ft_strcpy:
 xor			rcx, rcx
-mov			rax, rdi			
-cmp byte	[rsi], 0x0	
-jz		_end				
+xor			rdx, rdx
+mov			rax, dest
 
-_loop:							
-mov			rdx, [rsi + rcx]
-mov			[rdi + rcx], rdx
-inc			rcx					
-cmp byte	[rsi + rcx], 0x0
-jz		_end					
-jmp		_loop					
+_loop :
+cmp byte	[src + rcx], 0x0
+je		_end
+mov			dl, byte [src + rcx]
+mov			byte [dest + rcx], dl
+inc			rcx
+jmp		_loop
 
 _end:
-mov byte	[rdi + rcx], 0x0
-ret 							
+mov byte	[dest + rcx], 0x0
+ret
