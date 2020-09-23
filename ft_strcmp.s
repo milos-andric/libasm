@@ -10,20 +10,22 @@
 section .text
 global ft_strcmp
 
-ft_strcmp:
+ft_strcmp :
 xor			rcx, rcx
-mov			rax, rdi			
-cmp byte	[rsi], 0x0	
-jz		_end				
+xor			rax, rax
 
-_loop:							
-mov			rdx, [rsi + rcx]
-mov			[rdi + rcx], rdx
-inc			rcx					
+_loop :
 cmp byte	[rsi + rcx], 0x0
-jz		_end					
-jmp		_loop					
+jz 		_end
+cmp byte	[rdi + rcx], 0x0
+jz 		_end
+mov 	rdx, [rsi + rcx]
+cmp		[rdi + rcx], rdx
+jne		_end
+inc 		rcx
+jmp 	_loop
 
-_end:
-mov byte	[rdi + rcx], 0x0
+_end :
+mov 	rdx, [rsi + rcx]
+cmp		[rdi + rcx], rdx
 ret 							

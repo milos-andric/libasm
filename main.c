@@ -10,6 +10,11 @@ int main(void)
 	printf("%zu\n", ft_strlen("0"));
 	printf("%zu\n", ft_strlen(""));
 
+	printf("\n\nstrcmp : %d\n", ft_strcmp("0123", "0123"));
+	printf("%d\n", ft_strcmp("01234", "02"));
+	printf("%d\n", ft_strcmp("02", "0123"));
+	printf("%d\n", ft_strcmp("", "1"));
+
 	printf("\n\n\nstrcpy :\n");
 	char *s2 = "Banana";
 	char *s4 = "salu";
