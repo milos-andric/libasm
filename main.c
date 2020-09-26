@@ -10,7 +10,6 @@
 
 int main(void)
 {
-	setbuf(stdout, NULL);
 	int s1 = ft_strlen("sd");
 	printf("%zu\n", ft_strlen("0123456789"));
 	printf("%zu\n", ft_strlen("01234"));
@@ -29,6 +28,12 @@ int main(void)
 	int fd1 = open("myfile", O_CREAT | O_WRONLY, 0777);
 	char *str1 = "Ballon rouge";
 	ft_write(fd1, str1, ft_strlen(str1));
+
+
+	printf("strdup : %s" ft_strdup("Banana"));
+	printf("strdup : %s" ft_strdup("a"));
+	printf("strdup : %s" ft_strdup(""));
+	printf("strdup : %s" ft_strdup("ABCDAAAA"));
 
 	printf("\n\n\nstrcpy :\n");
 	char *s2 = "Banana";
