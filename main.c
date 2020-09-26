@@ -30,10 +30,10 @@ int main(void)
 	ft_write(fd1, str1, ft_strlen(str1));
 
 
-	printf("strdup : %s" ft_strdup("Banana"));
-	printf("strdup : %s" ft_strdup("a"));
-	printf("strdup : %s" ft_strdup(""));
-	printf("strdup : %s" ft_strdup("ABCDAAAA"));
+	printf("strdup : %s",ft_strdup("Banana"));
+	printf("strdup : %s",ft_strdup("a"));
+	printf("strdup : %s",ft_strdup(""));
+	printf("strdup : %s",ft_strdup("ABCDAAAA"));
 
 	printf("\n\n\nstrcpy :\n");
 	char *s2 = "Banana";

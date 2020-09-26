@@ -13,7 +13,7 @@ global ft_strdup
 
 ft_strdup:
 push    rdi
-call    strlen
+call    ft_strlen
 inc     rax
 mov     rdi, rax
 call    malloc
