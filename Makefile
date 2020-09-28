@@ -2,9 +2,9 @@ NAME=libasm.a
 ASM= ft_strlen.s \
      ft_strcpy.s \
      ft_strcmp.s \
-      ft_write.s \
-      ft_strdup.s
-#      ft_read.s \
+     ft_write.s  \
+     ft_strdup.s \
+     ft_read.s
 
 OBJS=$(ASM:%.s=%.o)
 
