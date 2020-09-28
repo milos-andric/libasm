@@ -12,20 +12,21 @@
 ;	DI	Destination Index, utilise comme pointeur destination pour operation sur chaine de caractere
 ;	SI	Source Index, utilise comme pointeur source pour operation sur chaine de caractere
 
-section .text					; convention d asm qui permet au programme de savoir dans quelle grande partie du programme elle se trouve
-								; il en existe 3 
-global ft_strlen
+section .text		;convention d asm qui permet au programme de savoir dans quelle grande partie du programme elle se trouve
+			;il en existe 3, .text la ou le code vas se trouver,
+			;.data et .bss ou l'on vas declarer des variable initialisee et non initialisee respectivement
+global ft_strlen	; Declaration du point d'entree de la fonction ft_strlen
 
 ft_strlen:
-xor			rax, rax			; mise a 0 du registre rax, le registre de retour
-cmp			rdi, 0				; verification de la chaine recu en parametre par le registre rdi, si le resultat de la comparation est a 0, chaine vide
-jz		_end					; Jump au point d ancrage _end si instruction du dessus est egale a 0, magnifique
+xor			rax, rax	; mise a 0 du registre rax, le registre de retour
+cmp			rdi, 0		; verification de la chaine recu en parametre par le registre rdi, si le resultat de la comparation est a 0, chaine vide
+jz		_end			; Jump au point d ancrage _end si instruction du dessus est egale a 0, magnifique
 
-_loop:							; il s agit ici comme d un ancrage, un point vers lequelle ont pourras sauter plus tard ou avant
+_loop:					; il s agit ici comme d un ancrage, un point vers lequelle ont pourras sauter plus tard ou avant
 cmp byte	[rdi + rax], 0x0	; comparaison d octet avec la valeur 0, les crochet servent a dereferencer le pointeur sur rdi + incrementation
-jz		_end					; si on est a la fin de la chaine, aller a _end
-inc			rax					; incrementation de l index
-jmp		_loop					; revenir au point d ancrage _loop
+jz		_end			; si on est a la fin de la chaine, aller a _end
+inc			rax		; incrementation de l index
+jmp		_loop			;revenir au point d ancrage _loop
 
 _end:
-ret 							; fin de la fonction, retour de rax
+ret 					; fin de la fonction, retour de rax
