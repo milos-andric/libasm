@@ -9,7 +9,7 @@ xor			rcx, rcx
 xor			rax, rax
 
 _loop :
-'cmp byte	[s2 + rcx], 0x0     ;ici on verifie si l'une des deux str est terminee
+cmp byte	[s2 + rcx], 0x0     ;ici on verifie si l'une des deux str est terminee
 je 		_end
 cmp byte	[s1 + rcx], 0x0
 je 		_end
