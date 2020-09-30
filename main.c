@@ -40,6 +40,15 @@ void    test_ft_strdup(char *str)
 	free(str1);
 }
 
+void    test_ft_strcpy(char *str)
+{
+	char *s1 = malloc(sizeof(char) * strlen(str) + 1);
+
+	printf("\n\tTesting ft_strcpy.s with (%s)\n", str);
+	printf("\t\tmine : (%s)\n", s1 = ft_strcpy(s1, str));
+	free(s1);
+}
+
 int main(void)
 {
 	printf("Ft_strlen:");
@@ -53,10 +62,10 @@ int main(void)
 	test_ft_strcmp("0","0");
 	test_ft_strcmp("0", "1");
 	test_ft_strcmp("003", "000");
-	test_ft_strcmp("111112", "111113");
-	test_ft_strcmp("<.,.,.lls;dlfk==--asdkmfo", "<.,.,.lls;dlfk==--asdkmfo@");
+	test_ft_strcmp("111118", "111113");
+	test_ft_strcmp("<.ls;dlfk==--asdkmfo", "<.ls;dlfk==--asdkmfo@");
 
-	printf("Ft_write :\ndiff myfile1 myfile2\n\n");
+	printf("Ft_write :\n\tdiff myfile1 myfile2\n\tshouldn't expect anything back\n\n");
 	test_ft_write();
 	
 	printf("Ft_strdup :");
@@ -65,17 +74,10 @@ int main(void)
 	test_ft_strdup(";lsakjdfj");
 	test_ft_strdup("sdgtjukidfgjukdfuidfghjukl");
 
-	printf("\n\n\nstrcpy :\n");
-	char *s2 = "Banana";
-	char *s4 = "salu";
-	char s3[10];
-	char s5[10];
-	char s6[10];
-	ft_strcpy(s3,s2);
-	printf("%s 		src = %p 	dest = %p\n", s3, s2, s3);	
-	ft_strcpy(s5,s4);
-	printf("%s 		src = %p 	dest = %p\n", s5, s4, s5);
-	ft_strcpy(s6,s4);
-	printf("%s 		src = %p 	dest = %p\n", s6, s4, s6);
+	printf("\n\nFt_strcpy :\n");
+	test_ft_strcpy("huahuhuhauha");
+	test_ft_strcpy("");
+	test_ft_strcpy("juju");
+	test_ft_strcpy("B bsd .,; ';;; ppa.s;d ))()9%$^&*()'");
 	return(0);
 }
