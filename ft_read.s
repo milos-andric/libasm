@@ -14,7 +14,7 @@ _error :
     mov     rdx, rax
     call    __errno_location
     mov     [rax], rdx
-    mov     rax, 1
+    mov     rax, -1
 
 _end :
     ret

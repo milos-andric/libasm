@@ -21,6 +21,8 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm myfile1 myfile2 libasm
+
 re : fclean all
 
 run :	$(NAME) 
