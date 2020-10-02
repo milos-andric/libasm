@@ -37,7 +37,7 @@ void    test_ft_write(void)
 void    test_ft_read(void)
 {
 	int fd1 = open("myfile1", O_RDWR);
-	char	str[1000];
+	char	str[1000] = {0};
 	int		dis;
 	dis = ft_read(fd1, &str, 150);
 	printf("\treturn = %d\n%s\n", dis, str);
@@ -80,10 +80,10 @@ int main(void)
 	test_ft_strcmp("111118", "111113");
 	test_ft_strcmp("<.ls;dlfk==--asdkmfo", "<.ls;dlfk==--asdkmfo@");
 
-	printf("Ft_write :\n\tdiff myfile1 myfile2\n\tshouldn't expect anything back\n\n");
+	dprintf(1, "Ft_write :\n\tdiff myfile1 myfile2\n\tshouldn't expect anything back\n\n");
 	test_ft_write();
 
-	printf("Ft_read :\n\n");
+	dprintf(1, "Ft_read :\n\n");
 	test_ft_read();
 	
 	printf("Ft_strdup :");
