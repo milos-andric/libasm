@@ -40,8 +40,10 @@ void    test_ft_read(void)
 	char	str[1000];
 	int		dis;
 	dis = ft_read(fd1, &str, 150);
-	perror(NULL);
 	printf("\treturn = %d\n%s\n", dis, str);
+	dis = ft_read(-45, &str, 150);
+	printf("\tfake fd = %d\n\n", dis);
+	perror(NULL);
 }
 
 void    test_ft_strdup(char *str)
