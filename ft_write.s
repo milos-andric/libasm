@@ -11,7 +11,7 @@ ft_write :
 
 _error :
     neg     rax                 ;on multiplie rax par -1
-    mov     rax, rdx
+    mov     rdx, rax
     call    __errno_location
     mov     [rax], rdx
     mov     rax, -1
